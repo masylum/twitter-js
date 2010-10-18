@@ -1,6 +1,6 @@
 # twitter-js
 
-Easy peasy twitter client
+Easy peasy twitter client.
 
     npm install twitter-js
 
@@ -8,8 +8,8 @@ Easy peasy twitter client
 
 twitter-js has two methods.
 
-*getAccesToken*: Uses oAuth module to retrieve the access_token
-*apiCall*: Does a call to twitter API.
+* getAccesToken(_req_, _res_, _callback_): Uses oAuth module to retrieve the access_token
+* apiCall(_http_method_, _path_, _params_, _callback_): Does a call to twitter API.
 
 ## Example using express.js
 
@@ -18,10 +18,8 @@ twitter-js has two methods.
           twitterClient = require('twitter-js').twitterClient('consumerKey', 'consumerSecret');
 
       twitterClient.getAccessToken(req, res, function (error, token) {
-        twitterClient.apiCall(
-          'POST',
-          '/statuses/update.json',
-          { token: {oauth_token_secret: token.oauth_token, oauth_token: token.oauth_token_secret}, status: req.param('message') },
+        twitterClient.apiCall('POST', '/statuses/update.json',
+          {token: token, status: req.param('message')},
           function (error, result) {
             res.render('tweet.jade', {locals: {result: result}});
           }
