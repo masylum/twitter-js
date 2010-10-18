@@ -1,6 +1,6 @@
 # twitter-js
 
-Easy peasy twitter client.
+Easy peasy twitter client for connect/express.
 
     npm install twitter-js
 
