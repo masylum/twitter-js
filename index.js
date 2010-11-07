@@ -1,1 +1,1 @@
-module.exports.twitterClient = require('./lib/twitter_client');
+module.exports = require('./lib/twitter_client');

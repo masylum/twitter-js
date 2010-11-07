@@ -1,11 +1,12 @@
 {
   "name": "twitter-js",
   "description": "easy peasy twitter client",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Pau Ramon <masylum@gmail.com>",
   "keywords": ["twitter"],
+  "main" : "lib/twitter_client.js",
+  "directories" : { "lib" : "./lib" },
   "dependencies": { "oauth": ">= 0.8.2" },
   "repository" : {"type": "git" , "url": "http://github.com/masylum/twitter-js.git" },
   "engines": { "node": ">= 0.2.0" }
 }
-
