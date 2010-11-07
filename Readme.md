@@ -15,25 +15,34 @@ Params must contain the token.
 
 ## Example using express.js
 
-    // You need sessions
-    app.configure(function () {
-      app.use(connect.cookieDecoder());
-      app.use(connect.session());
-    });
+    var express = require('express'),
+        connect = require('connect');
 
-    app.post('/tweet/:message', function (req, res) {
-      var self = this,
-          twitterClient = require('twitter-js')('consumerKey', 'consumerSecret');
-
-      twitterClient.getAccessToken(req, res, function (error, token) {
-        twitterClient.apiCall('POST', '/statuses/update.json',
-          {token: token, status: req.param('message')},
-          function (error, result) {
-            res.render('tweet.jade', {locals: {result: result}});
-          }
+    // Prevent reap timer
+    var twitterClient = require('./../')('yourKey', 'yourPass', 'http://twitter-js.com:3003/'),
+        app = express.createServer(
+          connect.bodyDecoder(),
+          connect.cookieDecoder(),
+          connect.session()
         );
+
+    app.get('/', function (req, res) {
+      twitterClient.getAccessToken(req, res, function (error, token) {
+        res.render('client.jade', {locals: {token: token}});
       });
     });
+
+    app.post('/message', function (req, res) {
+      twitterClient.apiCall('POST', '/statuses/update.json',
+        {token: {oauth_token_secret: req.param('oauth_token_secret'), oauth_token: req.param('oauth_token'), status: req.param('message')}},
+        function (error, result) {
+          res.render('done.jade');
+        }
+      );
+    });
+
+    app.listen(3003);
+
 
 ## Test
 
