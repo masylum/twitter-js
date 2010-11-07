@@ -34,3 +34,13 @@ Params must contain the token.
         );
       });
     });
+
+## Test
+
+To test and see this module working:
+
+  * copy the test folder
+  * set up the keys and password of your app
+  * run it _node test/client.js_
+  * Add 127.0.0.1 twitter-js.com at your hosts file
+  * Open your browser at localhost:3003
