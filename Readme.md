@@ -18,7 +18,6 @@ Params must contain the token.
     var express = require('express'),
         connect = require('connect');
 
-    // Prevent reap timer
     var twitterClient = require('./../')('yourKey', 'yourPass', 'http://twitter-js.com:3003/'),
         app = express.createServer(
           connect.bodyDecoder(),
