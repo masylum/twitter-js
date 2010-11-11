@@ -5,10 +5,8 @@
  */
 
 var express = require('express'),
-    connect = require('connect');
-
-// Prevent reap timer
-var twitterClient = require('./../')(
+    connect = require('connect'),
+    twitterClient = require('./../')(
       'yourKey',
       'yourPass',
       'http://twitter-js.com:3003/'
@@ -46,4 +44,3 @@ app.post('/message', function (req, res) {
 });
 
 app.listen(3003);
-
