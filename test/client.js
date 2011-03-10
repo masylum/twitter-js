@@ -12,9 +12,9 @@ var express = require('express'),
       'http://twitter-js.com:3003/'
     ),
     app = express.createServer(
-      connect.bodyDecoder(),
-      connect.cookieDecoder(),
-      connect.session()
+      connect.bodyParser(),
+      connect.cookieParser(),
+      connect.session({ secret: 'yourSecret' })
     );
 
 app.set('views', __dirname);
