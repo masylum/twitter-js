@@ -8,8 +8,7 @@ var express = require('express'),
     connect = require('connect'),
     twitterClient = require('./../')(
       'yourKey',
-      'yourPass',
-      'http://twitter-js.com:3003/'
+      'yourPass'
     ),
     app = express.createServer(
       connect.bodyParser(),
@@ -34,7 +33,13 @@ app.post('/message', function (req, res) {
   twitterClient.apiCall(
     'POST',
     '/statuses/update.json',
-    {token: {oauth_token_secret: req.param('oauth_token_secret'), oauth_token: req.param('oauth_token'), status: req.param('message')}},
+    {
+      token: {
+        oauth_token_secret: req.param('oauth_token_secret'),
+        oauth_token: req.param('oauth_token'),
+        status: req.param('message')
+      }
+    },
     function (error, result) {
       console.log(error);
       console.log(result);

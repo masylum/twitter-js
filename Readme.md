@@ -18,7 +18,7 @@ Params must contain the token.
     var express = require('express'),
         connect = require('connect');
 
-    var twitterClient = require('./../')('yourKey', 'yourPass', 'http://twitter-js.com:3003/'),
+    var twitterClient = require('./../')('yourKey', 'yourPass'),
         app = express.createServer(
           connect.bodyParser(),
           connect.cookieParser(),
