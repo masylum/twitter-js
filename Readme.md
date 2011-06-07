@@ -45,7 +45,7 @@ Params must contain the token.
 
 ## Test
 
-linkdin is fully tested using [testosterone](https://github.com/masylum/testosterone)
+`twitter-js` is fully tested using [testosterone](https://github.com/masylum/testosterone)
 
 ``` bash
 make
