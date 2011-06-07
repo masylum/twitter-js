@@ -10,8 +10,8 @@ npm install twitter-js
 
 twitter-js has two methods.
 
-* getAccesToken(req, res, callback): Uses oAuth module to retrieve the access_token
-* apiCall(http_method, path, params, callback): Does a call to twitter API.
+* `getAccesToken(req, res, callback)`: Uses oAuth module to retrieve the access_token
+* `apiCall(http_method, path, params, callback)`: Does a call to twitter API.
 
 Params must contain the token.
 
