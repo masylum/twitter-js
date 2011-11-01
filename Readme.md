@@ -33,7 +33,7 @@ Params must contain the token.
 
     app.post('/message', function (req, res) {
       twitterClient.apiCall('POST', '/statuses/update.json',
-        {token: {oauth_token_secret: req.param('oauth_token_secret'), oauth_token: req.param('oauth_token'), status: req.param('message')}},
+        {token: {oauth_token_secret: req.param('oauth_token_secret'), oauth_token: req.param('oauth_token')}, status: req.param('message')},
         function (error, result) {
           res.render('done.jade');
         }
