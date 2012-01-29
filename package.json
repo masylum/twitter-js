@@ -1,7 +1,7 @@
 {
   "name": "twitter-js",
   "description": "easy peasy twitter client",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Pau Ramon <masylum@gmail.com>",
   "keywords": ["twitter"],
   "main" : "lib/twitter_client.js",
